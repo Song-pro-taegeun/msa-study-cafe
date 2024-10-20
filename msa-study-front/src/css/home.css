@@ -1,0 +1,378 @@
+@font-face {
+  font-family: "EF_MACHO";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-01@1.0/EF_MACHO.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/******* 공통 ******/
+* {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  box-sizing: border-box;
+  font-family: "SUIT", sans-serif;
+  color: #fff;
+  word-break: keep-all;
+}
+
+body {
+  background: #121212;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+::placeholder {
+  font-weight: bold;
+}
+
+.wrap {
+  max-width: 1520px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-family: "EF_MACHO";
+  position: relative;
+  z-index: 3;
+}
+
+.title {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+.input .inp {
+  background: #121212;
+  height: 60px;
+  padding: 0 20px;
+  font-size: 16px;
+  line-height: 50px;
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  outline: none;
+  transition: 0.5s;
+  border-radius: 6px;
+}
+
+.input > .inp:focus:not(:disabled),
+.input > .inp:hover:not(:disabled) {
+  border: 1px solid #fff;
+}
+
+.error-msg {
+  margin-top: 8px;
+  color: #0cd95d;
+  font-weight: 500;
+  font-size: 13px;
+  text-align: left;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.error-msg .material-symbols-outlined {
+  font-size: 16px;
+  color: #0cd95d;
+  margin-right: 5px;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 200, "GRAD" 0, "opsz" 24;
+}
+
+.bt_green {
+  background: #0cd95d;
+  border: 1px solid #0cd95d;
+}
+
+.btn {
+  border-radius: 6px;
+  padding: 20px 40px 20px 40px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+/****** 헤더 *****/
+
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding: 0 50px;
+  padding-top: 24px;
+  z-index: 9999;
+  box-sizing: border-box;
+}
+
+.header .wrap {
+  max-width: 100%;
+  width: 100%;
+  backdrop-filter: blur(15px);
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: space-between;
+  border-radius: 12px;
+  padding: 0 50px;
+  align-items: center;
+  height: 80px;
+}
+
+.header .logo {
+  font-size: 30px;
+  animation: logo 5s ease-in-out infinite;
+  z-index: 3;
+}
+
+@keyframes logo {
+  0% {
+    color: white;
+  }
+  50% {
+    color: #0cd95d;
+  }
+
+  100% {
+    color: white;
+  }
+}
+
+.header .right {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 3em;
+}
+
+.header .menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  gap: 5em;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  z-index: 1;
+}
+
+.header .menu > li {
+  padding: 30px 0;
+}
+
+.header .menu > li > span {
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.header .menu > li:hover > span {
+  color: #0cd95d;
+}
+
+.header .menu div {
+  /* display: none; */
+  list-style: none;
+  position: absolute;
+  top: 113%;
+  height: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.header .menu div ul {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  height: 77px;
+}
+
+.header .menu ul li {
+  padding: 0 2.5em;
+  cursor: pointer;
+  position: relative;
+}
+
+.header .menu ul li:hover {
+  text-decoration: underline;
+}
+
+.header .menu ul li:first-child {
+  padding-left: 0;
+}
+
+.header .menu ul li:after {
+  content: "";
+  width: 1px;
+  height: 12px;
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.3);
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.header .menu ul li:last-child:after {
+  display: none;
+}
+
+.login {
+  padding-left: 2em;
+  transition: 0.5s;
+  position: relative;
+  z-index: 3;
+  padding: 0;
+}
+
+.login:hover ul {
+  display: block;
+}
+
+.login span {
+  font-size: 34px;
+}
+
+.login ul {
+  position: absolute;
+  text-align: center;
+  padding: 20px;
+  background: #fff;
+  color: #212121;
+  border-radius: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+}
+
+.login ul li {
+  color: #121212;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.login ul li:last-child {
+  margin-bottom: 0;
+}
+
+.login ul li:hover {
+  text-decoration: underline;
+}
+
+.menu_bg {
+  position: absolute;
+  width: 100%;
+  top: 90px;
+  left: 0;
+  height: 76px;
+  background: rgba(255, 255, 255, 0.2);
+  z-index: -1;
+  border-radius: 12px;
+}
+
+/*****푸터******/
+
+.home {
+  height: 100vh;
+}
+
+.footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 50px;
+  color: #999;
+}
+
+.footer .wrap {
+  max-width: 100%;
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  gap: 5em;
+  line-height: 2;
+  position: relative;
+}
+
+.footer .logo {
+  font-size: 30px;
+  color: white;
+}
+
+.footer .info li {
+  color: #999;
+}
+
+.footer .info span {
+  color: white;
+}
+
+.footer .info ul ul {
+  display: flex;
+  gap: 3em;
+}
+
+.footer .info p {
+  margin-top: 30px;
+  display: block;
+  color: #999;
+}
+
+.footer .top_btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  border-radius: 80px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 10px;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer .top_btn span {
+  font-size: 50px;
+  bottom: 0;
+  position: relative;
+  transition: 0.5s;
+}
+
+.footer .top_btn:hover span {
+  bottom: 10px;
+}
+
+/**로그인**/
+
+.SignIn .wrap {
+  padding: 300px 0;
+  width: 450px;
+}
+
+.login-box .input.pw .inp {
+  margin-top: 15px;
+}
+
+.pw_find {
+  text-align: right;
+  margin-top: 15px;
+  font-size: 14px;
+}
+.login-box .bt_green {
+  margin-top: 30px;
+  font-weight: bold;
+}
+
+.login-box .join {
+  margin-top: 10px;
+  border: 1px solid #0cd95d;
+  color: #0cd95d;
+  font-weight: bold;
+}

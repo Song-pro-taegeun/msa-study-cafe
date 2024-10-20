@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  frontend:
+    build:
+      context: ./msa-study-front
+      dockerfile: Dockerfile.front
+    container_name: msa-study_front
+    ports:
+      - "81:3000"
+    volumes:
+      - ./msa-study-front/nginx.conf:/etc/nginx/nginx.conf
+      - ./msa-study-front/build:/app/build
+    command: ["nginx", "-g", "daemon off;"]
